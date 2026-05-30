@@ -36,5 +36,12 @@ export interface LoginResponse {
   inicioEn?: string;
 }
 
-export interface ForgotPasswordRequest { usuarioOCorreo: string }
-export interface ResetPasswordRequest { token: string; nuevaPassword: string; confirmarPassword: string }
+export interface ForgotPasswordRequest 
+{ usuarioOCorreo: string 
+
+}
+export interface ResetPasswordRequest
+ { token: string;
+   nuevaPassword: string; 
+   confirmarPassword: string
+ }
