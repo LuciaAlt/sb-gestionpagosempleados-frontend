@@ -1,0 +1,12 @@
+<svg width="620" height="150" viewBox="0 0 620 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g>
+    <path d="M15 25C28 55 55 70 89 82C105 88 111 103 102 119C90 142 53 141 29 119C8 99 0 72 2 40L15 25Z" fill="white"/>
+    <path d="M38 16H118L104 60L44 38C29 32 28 22 38 16Z" fill="#86A4B2"/>
+    <path d="M148 20H275L264 62C237 56 206 52 190 57C181 60 179 69 192 73L245 83C277 89 288 106 279 126C267 151 219 153 146 138L158 96C197 106 230 110 244 103C253 98 250 90 238 88L187 78C152 72 140 54 148 20Z" fill="white"/>
+    <path d="M303 20H422C456 20 478 34 478 59C478 76 467 87 449 93C469 99 481 112 481 130C481 156 459 170 424 170H303V20ZM352 56V78H415C429 78 435 74 435 67C435 60 429 56 415 56H352ZM352 110V135H421C436 135 443 131 443 122C443 114 436 110 421 110H352Z" fill="white"/>
+    <rect x="505" y="18" width="2" height="116" fill="#86A4B2"/>
+    <text x="530" y="47" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" letter-spacing="9">SUPERINTENDENCIA</text>
+    <text x="530" y="82" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" letter-spacing="9">DE BANCOS</text>
+    <text x="530" y="118" fill="#86A4B2" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="500" letter-spacing="9">REPÚBLICA DOMINICANA</text>
+  </g>
+</svg>
