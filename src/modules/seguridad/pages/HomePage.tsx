@@ -1,0 +1,4 @@
+import { Card, Row, Col } from 'react-bootstrap';
+import { FaChartBar, FaUsers, FaUserTie } from 'react-icons/fa';
+import logo from '../../../assets/logo-sb.png';
+export default function HomePage() { return <Card className="content-card home-card"><Card.Body className="text-center"><img src={logo} className="home-logo" alt="SB" /><h2>Bienvenida al sistema</h2><p className="text-muted">Sistema de gestión administrativa</p><Row className="g-3 mt-3"><Col md={4}><Quick icon={<FaUserTie />} title="Empleados" /></Col><Col md={4}><Quick icon={<FaUsers />} title="Usuarios" /></Col><Col md={4}><Quick icon={<FaChartBar />} title="Reportes" /></Col></Row></Card.Body></Card> } function Quick({ icon, title }: { icon: React.ReactNode; title: string }) { return <div className="quick-card">{icon}<strong>{title}</strong></div> }
