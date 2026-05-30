@@ -4,12 +4,12 @@ import RequiredLabel from '../../../shared/components/RequiredLabel';
 import { CatalogItem, Employee, EmployeeRequest } from '../models/EmployeeModels';
 
 type Props = { show: boolean; onHide: () => void; onSave: (payload: EmployeeRequest) => Promise<void>; employee?: Employee | null; departments: CatalogItem[]; types: CatalogItem[]; readonly?: boolean };
-const empty: EmployeeRequest = { nombres: '', apellidos: '', numeroSeguroSocial: '', departamentoId: undefined, tipoEmpleadoId: 0, salarioSemanal: 0, sueldoPorHora: 0, horasTrabajadas: 0, ventasBrutas: 0, tarifaComision: 0, salarioBase: 0, activo: true };
+const empty: EmployeeRequest = { nombres: '', apellidos: '', numeroSeguroSocial: '', departamentoId: 0, tipoEmpleadoId: 0, salarioSemanal: 0, sueldoPorHora: 0, horasTrabajadas: 0, ventasBrutas: 0, tarifaComision: 0, salarioBase: 0, activo: true };
 export default function EmployeeModal({ show, onHide, onSave, employee, departments, types, readonly }: Props) {
   const [form, setForm] = useState<EmployeeRequest>(empty);
   const [validated, setValidated] = useState(false);
   const [saving, setSaving] = useState(false);
-  useEffect(() => { if (show) setForm(employee ? { ...empty, ...employee, departamentoId: employee.departamentoId || employee.departmento?.id } : empty); setValidated(false); }, [show, employee]);
+  useEffect(() => { if (show) setForm(employee ? { ...empty, ...employee, departamentoId: employee.departamentoId || employee.departamentoId } : empty); setValidated(false); }, [show, employee]);
   const selectedType = useMemo(() => types.find(t => t.id === Number(form.tipoEmpleadoId)), [types, form.tipoEmpleadoId]);
   const typeName = (selectedType?.nombre || '').toLowerCase();
   const showWeekly = typeName.includes('asalariado') && !typeName.includes('comisión') && !typeName.includes('comision');

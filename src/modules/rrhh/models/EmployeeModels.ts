@@ -6,8 +6,8 @@ export interface Employee {
   nombreCompleto?: string;
   numeroSeguroSocial: string;
   departamentoId?: number;
-  departmentNombre?: string;
-  departmentoId?: { id: number; nombre: string };
+  departamentoNombre?: string;
+  departamento?: { id: number; nombre: string; codigo?: string };
   tipoEmpleadoId: number;
   tipoEmpleadoNombre?: string;
   tipoEmpleado?: { id: number; nombre: string; codigo?: string };

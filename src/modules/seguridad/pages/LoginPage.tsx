@@ -44,7 +44,7 @@ export default function LoginPage() {
     <div className="brand-line" />
 
     <h2>Bienvenida al sistema</h2>
-    <p>Gestión de pagos de empleados</p>
+    <p>Gestión de Pagos de Empleados</p>
   </div>
 
   <img
