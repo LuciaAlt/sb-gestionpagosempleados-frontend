@@ -3,6 +3,7 @@ export interface User {
   nombres: string;
   apellidos: string;
   nombreUsuario: string;
+  nombreCompleto:string;
   correo: string;
   rolNombre: string;
   rolId: number;
@@ -16,9 +17,10 @@ export interface UserRequest {
   id: number;
   nombres: string;
   apellidos: string;
+  nombreCompleto:string;
   nombreUsuario: string;
   correo: string;
-  rolId?: number;
+  rolId: number;
   password?: string;
   activo: boolean;
 }
@@ -39,4 +41,8 @@ export interface PaginatedResponse<T> {
   total: number;
   page: number;
   pages: number;
+}
+export interface Rol {
+  id: number;
+  nombre: string;
 }
