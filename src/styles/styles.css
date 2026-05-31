@@ -27,8 +27,33 @@ a { text-decoration: none; }
 .simple-auth-card { width: min(440px, 92%); background: #fff; border-radius: 20px; padding: 34px; box-shadow: 0 18px 60px rgba(0,0,0,.2); }
 .simple-logo { width: 280px; max-width: 100%; margin-bottom: 20px; }
 .app-layout { display: flex; min-height: 100vh; }
-.sidebar { width: 290px; background: var(--sb-blue); padding: 24px 18px; color: #fff; }
-.sidebar-logo { width: 220px; display: block; margin: 0 auto 28px; }
+
+.sidebar {
+  width: 280px;
+  background: var(--sb-blue);
+  padding: 8px 5px;
+  color: #fff;
+}
+.sidebar-logo {
+  display: block;
+  width: 260px;
+  height: auto;
+  margin: -52px 0 -53px -46px;
+  transform: translateX(18px);
+  object-fit: contain;
+}
+.sidebar-logo1 {
+  display: block;
+  width: 260px;
+  max-width: none;
+  height: auto;
+  margin: -52px 0 -53px 8px;
+  object-fit: contain;
+}
+
+.sidebar nav {
+  margin-top: 0;
+}
 .nav-item { display: flex; gap: 12px; align-items: center; color: #fff; padding: 13px 15px; border-radius: 10px; margin-bottom: 10px; font-weight: 700; }
 .nav-item:hover, .nav-item.active { background: rgba(255,255,255,.13); color: #fff; }
 .main { flex: 1; min-width: 0; }
