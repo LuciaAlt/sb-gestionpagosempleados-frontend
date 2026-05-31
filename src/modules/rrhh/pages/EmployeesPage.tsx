@@ -82,6 +82,11 @@ export default function EmployeesPage() {
     try {
       await employeeService.changeStatus(emp.id, !emp.activo);
       await load();
+        Swal.fire(
+              'Correcto',
+              `Usuario ${emp.activo ? 'inactivado' : 'activado'} correctamente.`,
+              'success'
+            );
     } catch (e: any) {
       Swal.fire(
         "Error",
