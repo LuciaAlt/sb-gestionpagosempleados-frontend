@@ -460,30 +460,10 @@ Fecha
 
 Las capturas estan dentro de:
 
-```text
-docs/images/
-```
+* La carperta se llama Captura de pantalla el cual contiene un pdf con las imagenes
 
-Ejemplo:
+* Nombre del archivo-Captura Frontend - Sistema de Gestión de Pagos de Empleados.pdf
 
-```text
-docs/images/login.png
-docs/images/home.png
-docs/images/empleados.png
-docs/images/usuarios.png
-docs/images/reportes.png
-docs/images/auditoria.png
-```
-
-Uso en README:
-
-```md
-![Login](docs/images/login.png)
-![Home](docs/images/home.png)
-![Empleados](docs/images/empleados.png)
-![Usuarios](docs/images/usuarios.png)
-![Reportes](docs/images/reportes.png)
-![Auditoria](docs/images/auditoria.png)
 ```
 
 ---
