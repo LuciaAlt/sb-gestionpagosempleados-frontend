@@ -16,7 +16,7 @@ import {
 } from 'react-icons/fa';
 
 import { userService } from '../services/userService';
-import { User, UserFilter, UserRequest } from '../models/UserModels';
+import { User, UserFilter, UserRequest, Rol } from '../models/UserModels';
 import UserModal from '../components/UserModal';
 import PaginationLite from '../../../shared/components/PaginationLite';
 import ActionLink from '../../../shared/components/ActionLink';
@@ -24,8 +24,8 @@ import { useAuth } from '../components/AuthContext';
 import { PERMISOS } from '../../../shared/utils/permissions';
 
 export default function UsersPage() {
+  const [roles, setRoles] = useState<Rol[]>([]);
   const { can } = useAuth();
-
   const [items, setItems] = useState<User[]>([]);
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
@@ -195,7 +195,7 @@ export default function UsersPage() {
                       ...filters,
                       id: e.target.value
                         ? Number(e.target.value)
-                        : undefined
+                        : 0
                     })
                   }
                 />
@@ -239,7 +239,26 @@ export default function UsersPage() {
                   }
                 />
               </div>
-
+               <div className="col-md-2">
+                  <Form.Select
+                  value={filters.rolId || ""}
+                  onChange={(e) =>
+                    setFilters({
+                      ...filters,
+                       rolId: e.target.value
+                        ? Number(e.target.value)
+                        : 0
+                    })
+                  }
+                >
+                  <option value="">Rol</option>
+                  {roles.map((t) => (
+                    <option key={t.id} value={t.id}>
+                      {t.nombre}
+                    </option>
+                  ))}
+                </Form.Select>
+              </div>
               <div className="col-md-2">
                 <Form.Control
                   placeholder="Correo"

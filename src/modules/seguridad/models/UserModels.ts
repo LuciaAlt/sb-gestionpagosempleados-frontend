@@ -18,6 +18,7 @@ export interface UserRequest {
   id: number;
   rolId: number;
   nombreUsuario: string;
+  nombreCompleto: string;
   hashContrasena: string;
   nombres: string;
   apellidos: string;

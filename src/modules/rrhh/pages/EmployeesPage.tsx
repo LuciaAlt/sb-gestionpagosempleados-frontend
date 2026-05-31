@@ -156,7 +156,7 @@ export default function EmployeesPage() {
                     setFilters({ ...filters, tipoEmpleadoId: e.target.value })
                   }
                 >
-                  <option value="">Tipo</option>
+                  <option value="">Tipo empleado</option>
                   {types.map((t) => (
                     <option key={t.id} value={t.id}>
                       {t.nombre}
