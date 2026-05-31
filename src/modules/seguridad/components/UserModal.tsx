@@ -1,20 +1,22 @@
 import { FormEvent, useEffect, useState } from 'react';
 import { Modal, Button, Row, Col, Form } from 'react-bootstrap';
+import Swal from 'sweetalert2';
 import RequiredLabel from '../../../shared/components/RequiredLabel';
 import { Rol, User, UserRequest } from '../models/UserModels';
-import Swal from 'sweetalert2';
 import api from '../../../shared/services/http';
 
 const empty: UserRequest = {
-  id:0,
+  id: 0,
   nombres: '',
   apellidos: '',
   nombreCompleto: '',
   nombreUsuario: '',
   correo: '',
   rolId: 0,
-  password: '',
-  activo: true
+  hashContrasena: '',
+  rolNombre: '',
+  activo: true,
+  bloqueado: false
 };
 
 export default function UserModal({
@@ -37,7 +39,7 @@ export default function UserModal({
 
   const loadRoles = async () => {
     try {
-      const { data } = await api.get<Rol[]>('/Catalogos/roles');
+      const { data } = await api.get<Rol[]>('/api/Catalogos/roles');
       setRoles(data || []);
     } catch (error: any) {
       Swal.fire(
@@ -53,25 +55,31 @@ export default function UserModal({
 
     loadRoles();
 
-    user
-    ? {
-        id: user.id,
-        nombres: user.nombres,
-        apellidos: user.apellidos,
-        nombreUsuario: user.nombreUsuario,
-        correo: user.correo,
-        rolId: user.rolId || 0,
-        password: '',
-        activo: user.activo
-      }
-    : empty
-
+    setForm(
+      user
+        ? {
+            id: user.id,
+            nombres: user.nombres,
+            apellidos: user.apellidos,
+            nombreCompleto:
+              user.nombreCompleto || `${user.nombres} ${user.apellidos}`,
+            nombreUsuario: user.nombreUsuario,
+            correo: user.correo,
+            rolId: user.rolId || 0,
+            hashContrasena: '',
+            rolNombre: user.rolNombre || '',
+            activo: user.activo,
+            bloqueado: user.bloqueado
+          }
+        : empty
+    );
 
     setValidated(false);
   }, [show, user]);
 
   const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    e.stopPropagation();
 
     setValidated(true);
 
@@ -82,7 +90,8 @@ export default function UserModal({
     try {
       await onSave({
         ...form,
-        rolId: Number(form.rolId)
+        rolId: Number(form.rolId),
+        nombreCompleto: `${form.nombres} ${form.apellidos}`.trim()
       });
 
       onHide();
@@ -107,7 +116,11 @@ export default function UserModal({
       >
         <Modal.Header closeButton>
           <Modal.Title>
-            {readonly ? 'Detalle usuario' : user ? 'Editar usuario' : 'Nuevo usuario'}
+            {readonly
+              ? 'Detalle usuario'
+              : user
+                ? 'Editar usuario'
+                : 'Nuevo usuario'}
           </Modal.Title>
         </Modal.Header>
 
@@ -202,8 +215,8 @@ export default function UserModal({
                   required
                   type="password"
                   disabled={readonly}
-                  value={form.password || ''}
-                  onChange={(e) => set('password', e.target.value)}
+                  value={form.hashContrasena || ''}
+                  onChange={(e) => set('hashContrasena', e.target.value)}
                 />
                 <div className="invalid-feedback">La contraseña es requerida.</div>
               </Col>
@@ -218,11 +231,22 @@ export default function UserModal({
                 onChange={(e) => set('activo', e.target.checked)}
               />
             </Col>
+
+            {user && (
+              <Col md={6}>
+                <Form.Check
+                  type="switch"
+                  label="Bloqueado"
+                  disabled
+                  checked={!!form.bloqueado}
+                />
+              </Col>
+            )}
           </Row>
         </Modal.Body>
 
         <Modal.Footer>
-          <Button variant="secondary" onClick={onHide}>
+          <Button variant="secondary" onClick={onHide} disabled={saving}>
             Cerrar
           </Button>
 

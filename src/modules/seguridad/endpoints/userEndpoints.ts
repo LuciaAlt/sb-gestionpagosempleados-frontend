@@ -1,8 +1,10 @@
-export const userEndpoints = { paginate: '/api/Usuario/GetPaginate',
- getById: (id: number) => `/api/Usuario/${id}`, create: '/api/Usuario',
- update: (id: number) => `/api/Usuario/${id}`,
- changeStatus: (id: number) => `/api/Usuario/${id}`,
- changeBlockStatus: (id: number) => `/api/Usuario/${id}`,
- delete: (id: number) => `/api/Usuario/${id}`,
- roles: '/api/Catalogos/roles'
-}
+export const userEndpoints = {
+  paginate: '/api/Usuario/GetPaginate',
+  getById: (id: number) => `/api/Usuario/${id}`,
+  create: '/api/Usuario',
+  update: (id: number) => `/api/Usuario/${id}`,
+  changeStatus: (id: number) => `/api/Usuario/${id}/active`,
+  changeBlockStatus: (id: number) => `/api/Usuario/${id}/block`,
+  delete: (id: number) => `/api/Usuario/${id}`,
+  roles: '/api/Catalogos/roles'
+};

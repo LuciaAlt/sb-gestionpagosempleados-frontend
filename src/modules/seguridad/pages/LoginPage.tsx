@@ -19,6 +19,7 @@ export default function LoginPage() {
   const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    
     const form = e.currentTarget;
     setValidated(true);
 

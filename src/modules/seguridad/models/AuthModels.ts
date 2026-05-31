@@ -27,7 +27,7 @@ export interface LoginResponse {
   nombreCompleto?: string;
   nombreuUsuario?: string;
   correo?: string;
-  role?: string;
+  roleIId?: number;
   nombreRole?: string;
   activo?: boolean;
   bloqueado?: boolean;

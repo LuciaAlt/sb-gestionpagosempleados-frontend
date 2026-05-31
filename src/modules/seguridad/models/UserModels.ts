@@ -1,28 +1,30 @@
 export interface User {
   id: number;
+  rolId: number;
+  nombreUsuario: string;
+  hashContrasena?: string;
   nombres: string;
   apellidos: string;
-  nombreUsuario: string;
-  nombreCompleto:string;
   correo: string;
-  rolNombre: string;
-  rolId: number;
+  rolNombre?: string | null;
   activo: boolean;
   bloqueado: boolean;
-  fechaCreacion?: string;
-  ultimoAcceso?: string;
+  fechaCambioContrasena?: string | null;
+  ultimoAcceso?: string | null;
+  nombreCompleto?: string;
 }
 
 export interface UserRequest {
   id: number;
+  rolId: number;
+  nombreUsuario: string;
+  hashContrasena: string;
   nombres: string;
   apellidos: string;
-  nombreCompleto:string;
-  nombreUsuario: string;
   correo: string;
-  rolId: number;
-  password?: string;
+  rolNombre?: string | null;
   activo: boolean;
+  bloqueado: boolean;
 }
 
 export interface UserFilter {
@@ -33,7 +35,7 @@ export interface UserFilter {
   nombreUsuario?: string;
   correo?: string;
   activo?: boolean;
- bloqueado?: boolean;
+  bloqueado?: boolean;
 }
 
 export interface PaginatedResponse<T> {
@@ -42,6 +44,7 @@ export interface PaginatedResponse<T> {
   page: number;
   pages: number;
 }
+
 export interface Rol {
   id: number;
   nombre: string;
