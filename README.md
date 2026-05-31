@@ -522,4 +522,4 @@ npm run preview
 
 ## Licencia
 
-Proyecto desarrollado con fines acad茅micos y de demostraci贸n de buenas pr谩cticas de desarrollo de React + TypeScript.
+Proyecto desarrollado con fines académicos y de demostración de buenas prácticas de desarrollo de React + TypeScript.
