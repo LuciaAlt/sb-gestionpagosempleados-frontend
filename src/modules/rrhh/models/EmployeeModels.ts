@@ -11,13 +11,13 @@ export interface Employee {
   tipoEmpleadoId: number;
   tipoEmpleadoNombre?: string;
   tipoEmpleado?: { id: number; nombre: string; codigo?: string };
-  salarioSemanal?: number;
-  sueldoPorHora?: number;
-  horasTrabajadas?: number;
-  ventasBrutas?: number;
-  tarifaComision?: number;
-  salarioBase?: number;
-  pagoSemanal?: number;
+  salarioSemanal?: undefined;
+  sueldoPorHora?: undefined;
+  horasTrabajadas?: undefined;
+  ventasBrutas?: undefined;
+  tarifaComision?: undefined;
+  salarioBase?: undefined;
+  pagoSemanal?: undefined;
   activo: boolean;
 }
 export interface EmployeeRequest extends Omit<Employee, 'id' | 'pagoSemanal'> { id?: number }
