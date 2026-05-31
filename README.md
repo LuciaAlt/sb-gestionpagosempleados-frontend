@@ -520,6 +520,6 @@ npm run preview
 * El token JWT se envía automáticamente mediante Axios.
 * Los errores de API se muestran mediante SweetAlert2.
 
-## 馃搫 Licencia
+## Licencia
 
 Proyecto desarrollado con fines acad茅micos y de demostraci贸n de buenas pr谩cticas de desarrollo de React + TypeScript.
