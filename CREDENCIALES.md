@@ -42,3 +42,4 @@ Cuando construyamos el frontend, usaremos estas credenciales para:
 - **Pantalla de login**: validar con `admin / Admin123!`
 - **Mostrar/ocultar botones**: el JWT incluye los permisos como claims `permisos`, el frontend los lee y decide qué mostrar
 - **Probar control de acceso**: loguearse como `jperez` para verificar que no aparece el botón "Registrar empleado"
+

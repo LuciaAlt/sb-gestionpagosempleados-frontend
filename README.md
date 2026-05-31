@@ -84,7 +84,6 @@ src/
     ├── services/
     └── utils/
 ```
-
 ---
 
 ## Responsabilidad de Carpetas
